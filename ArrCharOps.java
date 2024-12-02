@@ -3,10 +3,10 @@
 public class ArrCharOps {
     public static void main(String[] args) {
         String str = "clearly";
-        char[] arr1 = {'c','l','e','a','r','l','y'};
+       // char[] arr1 = {'c','l','e','a','r','l','y'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
-        System.out.println(str);  // Prints the string
-         println(arr1);            // Prints an array of characters
+       // System.out.println(str);  // Prints the string
+         //println(arr1);            // Prints an array of characters
         //System.out.println(charAt(arr1,2));      
         //System.out.println(indexOf(arr1,'l'));  
         //System.out.println(indexOf(arr1,'l',3)); 
@@ -22,7 +22,12 @@ public class ArrCharOps {
       //  System.out.println(compareTo("Zoo", "zoo"));
       //  System.out.println(hashCode(arr1));
       //  System.out.println(hashCode(arr2));
-       
+      char[] arr1 = "Somebody stop me".toCharArray();
+      boolean test1 = ArrCharOps.equals(ArrCharOps.subArray(arr1, 0, 8), "Somebody".toCharArray());
+      ArrCharOps.println(subArray(arr1, 0, 8));
+      boolean test2 = ArrCharOps.equals(ArrCharOps.subArray(arr1, 9, 16), "stop me".toCharArray());
+      System.out.println(test1);
+      System.out.println(test2);
       
     
     }
@@ -51,24 +56,18 @@ public class ArrCharOps {
      *  returns true; Otherwise returns false.
      */
     public static boolean equals(char[] arr1, char[] arr2) {
-       if (arr1 ==arr2){
-        return true;
-       }
-       for (int index = 0; index < arr1.length; index++)
-       { 
-       char t = charAt(arr1, index);
-        for (int index2 = 0; index2 < arr2.length; index2++)
-       {
-        char g = charAt(arr2, index2);
-        if (g != t)
-        {
-           return false;
+        if (arr1.length != arr2.length) {
+            return false;
         }
-       
-        
-         
-       }
-       }
+
+        // Compare each element of both arrays
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] != arr2[i]) {
+                return false; // Return false if any element is different
+            }
+        }
+
+        // If all elements are the same, return true
        return true;
     }
 
@@ -185,6 +184,9 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         if (str1.length()==0 && str2.length()== 0){
+            return -2;        
+        }
+        if (str1.length()!=0 && str2.length()== 0){
             return -2;        
         }
         if (str1.length()>=str2.length()) {
