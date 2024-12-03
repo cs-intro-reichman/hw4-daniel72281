@@ -3,7 +3,7 @@ public class Primes {
         int N = Integer.parseInt(args[0]);
         System.out.println("Prime numbers up to " + N + ":");
 
-        boolean[] boolarr = new boolean[N];
+        boolean[] boolarr = new boolean[N+1];
 
         for (int index = 2; index <= boolarr.length-1 ; index++){
             boolarr[index]=true;
@@ -11,7 +11,7 @@ public class Primes {
         int index = 3;
         
         while (index <= boolarr.length-1) {
-            for (int p = 2; p< boolarr.length-1 & p!=index; p++ )
+            for (int p = 2; p<= boolarr.length-1 & p!=index; p++ )
             if(index % p == 0 ){
                 boolarr[index]=false;
             }
