@@ -1,6 +1,7 @@
 public class Primes {
     public static void main(String[] args){
         int N = Integer.parseInt(args[0]);
+        System.out.println("Prime numbers up to " + N + ":");
 
         boolean[] boolarr = new boolean[N];
 
